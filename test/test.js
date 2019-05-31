@@ -1255,8 +1255,8 @@
         setTimeout(function() { deferred.resolve(); }, 1e3);
       }, {
         'defer': true,
-        'setup': function(deferred) {console.log('setup'); deferred.suResolve(); },
-        'teardown': function(deferred) { console.log('td'); deferred.tdResolve(); },
+        'setup': function(deferred) {deferred.suResolve(); },
+        'teardown': function(deferred) {deferred.tdResolve(); },
         'onComplete': function() {
           assert.strictEqual(this.hz.toFixed(0), '1');
           done();
@@ -1298,7 +1298,7 @@
         },
         'teardown': function(deferred) {
           fired.push('teardown');
-          setTimeout(function() {console.log(deferred); deferred.tdResolve(); }, 10);
+          setTimeout(function() {deferred.tdResolve(); }, 10);
         },
         'onComplete': function() {
           var actual = fired.join().replace(/(fn,)+/g, '$1').replace(/(setup,fn,teardown(?:,|$))+/, '$1');
