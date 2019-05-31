@@ -10,7 +10,6 @@
 
   /** Used as a safe reference for `undefined` in pre ES5 environments. */
   var undefined;
-  console.log('hello world');
 
   /** Used to determine if values are of the language type Object. */
   var objectTypes = {
